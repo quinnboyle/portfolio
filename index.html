@@ -4,27 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quinn Boyle — UX Designer who codes. Portfolio showcasing user-centered design and technical implementation.">
-    <meta name="author" content="Quinn Boyle">
     <title>Quinn Boyle — UX Designer</title>
     <link rel="stylesheet" href="styles-light.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="/" class="nav-logo">QB</a>
+            <a href="/" class="nav-logo">Quinn Boyle</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#work">Work</a></li>
@@ -37,118 +30,109 @@
     <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-inner">
-            <p class="hero-tag reveal-fade">UX Designer &amp; Developer</p>
-            <h1 class="hero-name">
-                <span class="reveal-line"><span>Quinn</span></span>
-                <span class="reveal-line"><em>Boyle.</em></span>
+            <p class="hero-eyebrow reveal-up">UX Designer &amp; Developer — Dublin, Ireland</p>
+            <h1 class="hero-title">
+                <span class="line-wrap"><span class="line-inner">Designing with</span></span>
+                <span class="line-wrap"><em class="line-inner">people</em><span class="line-inner">&nbsp;in mind.</span></span>
             </h1>
-            <p class="hero-sub reveal-fade">Bridging design thinking<br>with technical implementation.</p>
-            <a href="#work" class="hero-cta reveal-fade">View Work ↓</a>
+            <p class="hero-desc reveal-up">I'm Quinn — a UX designer who bridges research, design, and code to build experiences that actually work for the people using them.</p>
         </div>
-        <div class="hero-scroll-hint" aria-hidden="true">Scroll</div>
+        <div class="hero-bottom reveal-up">
+            <a href="#work" class="hero-link">See my work ↓</a>
+            <span class="hero-available">● Available for work</span>
+        </div>
     </section>
-
-    <!-- Marquee Ticker -->
-    <div class="marquee-wrap" aria-hidden="true">
-        <div class="marquee-track">
-            <span>User Research</span><span class="sep">·</span>
-            <span>UI Design</span><span class="sep">·</span>
-            <span>Prototyping</span><span class="sep">·</span>
-            <span>HTML &amp; CSS</span><span class="sep">·</span>
-            <span>JavaScript</span><span class="sep">·</span>
-            <span>Figma</span><span class="sep">·</span>
-            <span>Usability Testing</span><span class="sep">·</span>
-            <span>Interaction Design</span><span class="sep">·</span>
-            <span>User Research</span><span class="sep">·</span>
-            <span>UI Design</span><span class="sep">·</span>
-            <span>Prototyping</span><span class="sep">·</span>
-            <span>HTML &amp; CSS</span><span class="sep">·</span>
-            <span>JavaScript</span><span class="sep">·</span>
-            <span>Figma</span><span class="sep">·</span>
-            <span>Usability Testing</span><span class="sep">·</span>
-            <span>Interaction Design</span><span class="sep">·</span>
-        </div>
-    </div>
 
     <!-- Work Section -->
     <section class="work-section" id="work">
-        <p class="section-label reveal-fade">Selected Work</p>
-        <div class="work-list">
+        <p class="section-eyebrow reveal-up">Selected Work</p>
 
-            <a href="nextmove-case-study.html" class="work-item reveal-fade">
-                <div class="work-num">01</div>
-                <div class="work-info">
-                    <h2 class="work-title">NextMove</h2>
-                    <div class="work-tags">
-                        <span>User Research</span>
-                        <span>UI/UX Design</span>
-                        <span>Prototyping</span>
-                        <span>Development</span>
+        <!-- Project 1 -->
+        <article class="project-row reveal-up">
+            <a href="nextmove-case-study.html" class="project-image-wrap">
+                <div class="project-image-inner">
+                    <img src="photos/nextmove_logo.png" alt="NextMove project">
+                    <div class="project-image-overlay">
+                        <span>View Case Study →</span>
                     </div>
-                </div>
-                <span class="work-arrow">→</span>
-                <div class="work-peek">
-                    <img src="photos/nextmove_logo.png" alt="NextMove project preview">
                 </div>
             </a>
-
-            <a href="case-study.html?project=2" class="work-item reveal-fade">
-                <div class="work-num">02</div>
-                <div class="work-info">
-                    <h2 class="work-title">Project Two</h2>
-                    <div class="work-tags">
-                        <span>UX Research</span>
-                        <span>Interaction Design</span>
-                    </div>
+            <div class="project-info">
+                <span class="project-num">01</span>
+                <div class="project-tags">
+                    <span>User Research</span>
+                    <span>UI/UX Design</span>
+                    <span>Development</span>
                 </div>
-                <span class="work-arrow">→</span>
-                <div class="work-peek work-peek--empty">
+                <h2 class="project-title">NextMove</h2>
+                <p class="project-desc">A property-finding platform redesigned around how people actually search for homes — reducing cognitive load and improving decision confidence through research-led UX.</p>
+                <a href="nextmove-case-study.html" class="project-cta">Read Case Study →</a>
+            </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-row project-row--flip reveal-up">
+            <a href="case-study.html?project=2" class="project-image-wrap">
+                <div class="project-image-inner project-image-inner--empty">
                     <span>Coming Soon</span>
                 </div>
             </a>
-
-            <a href="case-study.html?project=3" class="work-item reveal-fade">
-                <div class="work-num">03</div>
-                <div class="work-info">
-                    <h2 class="work-title">Project Three</h2>
-                    <div class="work-tags">
-                        <span>Development</span>
-                        <span>Accessibility</span>
-                    </div>
+            <div class="project-info">
+                <span class="project-num">02</span>
+                <div class="project-tags">
+                    <span>UX Research</span>
+                    <span>Interaction Design</span>
                 </div>
-                <span class="work-arrow">→</span>
-                <div class="work-peek work-peek--empty">
+                <h2 class="project-title">Project Two</h2>
+                <p class="project-desc">Details coming soon. This project explores accessible interaction patterns and inclusive design systems for enterprise software.</p>
+                <a href="case-study.html?project=2" class="project-cta">Coming Soon →</a>
+            </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-row reveal-up">
+            <a href="case-study.html?project=3" class="project-image-wrap">
+                <div class="project-image-inner project-image-inner--empty">
                     <span>Coming Soon</span>
                 </div>
             </a>
-
-        </div>
+            <div class="project-info">
+                <span class="project-num">03</span>
+                <div class="project-tags">
+                    <span>Development</span>
+                    <span>Accessibility</span>
+                </div>
+                <h2 class="project-title">Project Three</h2>
+                <p class="project-desc">A deep-dive into accessibility-first design, building components that meet WCAG 2.1 AA while remaining visually engaging and easy to use.</p>
+                <a href="case-study.html?project=3" class="project-cta">Coming Soon →</a>
+            </div>
+        </article>
     </section>
 
     <!-- About Section -->
     <section class="about-section" id="about">
         <div class="about-inner">
-            <div class="about-left">
-                <p class="section-label reveal-fade">About</p>
-                <h2 class="about-heading reveal-fade">
-                    Designing with<br>
-                    <em>curiosity</em> &amp;<br>
-                    intention.
+            <div class="about-left reveal-up">
+                <p class="section-eyebrow">About</p>
+                <h2 class="about-title">
+                    A designer who<br>
+                    thinks in <em>systems</em><br>
+                    and speaks code.
                 </h2>
             </div>
             <div class="about-right">
-                <div class="about-text reveal-fade">
+                <div class="about-text reveal-up">
                     <p>I'm a UX designer with a background in IT support at ICON PLC, where I saw firsthand how good (and bad) software design impacts people's daily work. That experience sparked my transition into UX—I wanted to be on the front lines of creating better experiences, not just fixing broken ones.</p>
-                    <p>I approach design through a research-first lens, combining user insights with technical feasibility. My background in IT gives me a unique advantage—I understand both what users need and what's technically possible, which helps me design solutions that actually ship.</p>
-                    <p>I'm seeking entry-level UX roles where I can contribute both design thinking and technical skills—especially in healthcare, education, or sustainability.</p>
+                    <p>I approach design through a research-first lens, combining user insights with technical feasibility. My IT background means I understand both what users need and what's actually buildable—which helps me design solutions that ship.</p>
+                    <p>Currently seeking entry-level UX roles in healthcare, education, or sustainability — domains where thoughtful design makes a real difference.</p>
                 </div>
-                <div class="skills-cols reveal-fade">
+                <div class="skills-grid reveal-up">
                     <div class="skill-col">
                         <h4>Design</h4>
                         <ul>
                             <li>Figma</li>
                             <li>Adobe XD</li>
-                            <li>Sketch</li>
+                            <li>Prototyping</li>
                             <li>Wireframing</li>
                         </ul>
                     </div>
@@ -178,13 +162,11 @@
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="contact-inner">
-            <p class="section-label reveal-fade">Get In Touch</p>
-            <h2 class="contact-heading reveal-fade">
-                Let's make<br>
-                <em>something</em><br>
-                together.
+            <p class="section-eyebrow reveal-up">Get In Touch</p>
+            <h2 class="contact-title reveal-up">
+                Let's build<br><em>something great</em><br>together.
             </h2>
-            <div class="contact-links reveal-fade">
+            <div class="contact-body reveal-up">
                 <a href="mailto:quinnboyle237@gmail.com" class="contact-email">quinnboyle237@gmail.com</a>
                 <div class="contact-socials">
                     <a href="https://linkedin.com/in/quinn-boyle" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -198,56 +180,13 @@
     <footer class="footer">
         <div class="footer-inner">
             <span>© 2026 Quinn Boyle</span>
-            <span>Designed &amp; Built by Quinn</span>
+            <span>Designed &amp; coded by Quinn</span>
         </div>
     </footer>
 
     <script>
     (function () {
         'use strict';
-
-        // ── Custom Cursor ──────────────────────────────────────────
-        const dot  = document.getElementById('cursorDot');
-        const ring = document.getElementById('cursorRing');
-        let mx = 0, my = 0, rx = 0, ry = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mx = e.clientX;
-            my = e.clientY;
-            dot.style.transform = `translate(${mx}px,${my}px)`;
-        });
-
-        (function animRing() {
-            rx += (mx - rx) * 0.12;
-            ry += (my - ry) * 0.12;
-            ring.style.transform = `translate(${rx}px,${ry}px)`;
-            requestAnimationFrame(animRing);
-        })();
-
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => { dot.classList.add('hov'); ring.classList.add('hov'); });
-            el.addEventListener('mouseleave', () => { dot.classList.remove('hov'); ring.classList.remove('hov'); });
-        });
-
-        // ── Scroll Reveal ──────────────────────────────────────────
-        const revealObs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    revealObs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll('.reveal-fade').forEach(el => revealObs.observe(el));
-
-        // Hero line reveals on load
-        document.querySelectorAll('.reveal-line').forEach((line, i) => {
-            setTimeout(() => line.classList.add('revealed'), 100 + i * 160);
-        });
-        document.querySelectorAll('.hero-tag, .hero-sub, .hero-cta').forEach((el, i) => {
-            setTimeout(() => el.classList.add('revealed'), 300 + i * 130);
-        });
 
         // ── Nav scroll state ───────────────────────────────────────
         const nav = document.getElementById('nav');
@@ -280,20 +219,32 @@
             });
         });
 
-        // ── Work item: image peek follows cursor vertically ────────
-        document.querySelectorAll('.work-item').forEach(item => {
-            const peek = item.querySelector('.work-peek');
-            if (!peek) return;
-            item.addEventListener('mousemove', (e) => {
-                const rect = item.getBoundingClientRect();
-                const relY = e.clientY - rect.top;
-                peek.style.top = `${relY - 70}px`;
+        // ── Scroll reveal ──────────────────────────────────────────
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('revealed');
+                    obs.unobserve(e.target);
+                }
             });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-up').forEach(el => obs.observe(el));
+
+        // Hero title lines reveal on load
+        document.querySelectorAll('.line-inner').forEach((el, i) => {
+            setTimeout(() => el.classList.add('revealed'), 80 + i * 140);
         });
+        document.querySelectorAll('.hero-eyebrow, .hero-desc').forEach((el, i) => {
+            setTimeout(() => el.classList.add('revealed'), 200 + i * 150);
+        });
+        setTimeout(() => {
+            document.querySelector('.hero-bottom')?.classList.add('revealed');
+        }, 600);
 
         // ── Console easter egg ─────────────────────────────────────
-        console.log('%cHey there! 👋', 'font-size:18px;font-weight:bold;color:#c8a96e;');
-        console.log('%cPortfolio by Quinn Boyle — designed & coded from scratch.', 'font-size:13px;color:#6b6660;');
+        console.log('%cHey there! 👋', 'font-size:16px;font-weight:bold;');
+        console.log('%cPortfolio by Quinn Boyle.', 'font-size:13px;color:#888;');
     })();
     </script>
 
