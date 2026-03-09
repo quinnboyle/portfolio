@@ -46,20 +46,24 @@
     border-bottom: 1px solid var(--border-subtle);
 }
 
-/* Use the same centred container width as index.html */
+/* Centred container — matches the wider main site layout */
 .case-hero .container,
 .case-section .container,
 .case-section .container-sm,
+.case-section .container-lg,
 .section-nav .container {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 72px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
     .case-hero .container,
     .case-section .container,
     .case-section .container-sm,
+    .case-section .container-lg,
     .section-nav .container,
     .case-nav-inner { padding: 0 24px; }
 }
@@ -262,7 +266,7 @@
    ========================= */
 .pain-points-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     margin-top: var(--space-8);
 }
@@ -333,9 +337,14 @@
    ========================= */
 .insights-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-6);
     margin-top: var(--space-8);
+}
+
+@media (max-width: 900px) {
+    .pain-points-grid { grid-template-columns: 1fr; }
+    .insights-grid    { grid-template-columns: repeat(2, 1fr); }
 }
 
 .insight-card {

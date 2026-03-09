@@ -25,20 +25,23 @@
         }
         .screens-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
             margin-top: 24px;
         }
         .screen-card {
-            padding: 20px 24px;
+            padding: 18px 20px;
             border: 1px solid var(--border);
             border-radius: 12px;
             background: #fff;
         }
-        .screen-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
-        .screen-card p  { font-size: 0.9375rem; color: var(--muted); line-height: 1.6; margin: 0; }
+        .screen-card h4 { font-size: 0.9375rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+        .screen-card p  { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin: 0; }
         @media (max-width: 800px) {
             .case-hero-image-grid { grid-template-columns: 1fr; }
+            .screens-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
             .screens-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -327,6 +330,11 @@
                             <div class="insight-number">03</div>
                             <h4>Progress Visibility Matters</h4>
                             <p>Students expressed high anxiety about not knowing if they're "on track." They wanted visual indicators of progress, upcoming deadlines, and recommended next steps to reduce uncertainty.</p>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-number">04</div>
+                            <h4>Deadlines Drive Decisions</h4>
+                            <p>Without clear deadline awareness, students defaulted to reacting rather than planning. Seeing deadlines in context helped them prioritise tasks and reduce last-minute panic.</p>
                         </div>
                     </div>
                 </div>
