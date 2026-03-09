@@ -27,14 +27,18 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero (wrapped in scroll-jacking container) -->
+    <div class="hero-scroll-wrapper" id="heroScrollWrapper">
     <section class="hero" id="home">
-        <!--
-            CAR BACKGROUND: save a grainy Porsche 911 PNG/JPG to photos/car.png
-            then uncomment the line below:
-        -->
-        <!-- <div class="hero-car-bg" style="background-image:url('photos/car.png')"></div> -->
+        <!-- Grain overlay -->
         <div class="hero-grain" id="heroGrain"></div>
+
+        <!-- Porsche 911 — animated out on scroll.
+             Rename your photo to photos/porsche911.jpg and it will appear here. -->
+        <div class="hero-car" id="heroCar">
+            <img src="photos/porsche911.jpg" alt="" aria-hidden="true" class="hero-car-img">
+        </div>
+
         <div class="hero-grid">
         <div class="hero-left">
             <h1 class="hero-name reveal-up">
@@ -52,9 +56,8 @@
         </div>
         <div class="hero-right reveal-up">
             <!--
-                ADD YOUR PHOTO:
-                Replace the div below with:
-                <img src="photos/your-photo.jpg" alt="Quinn Boyle" class="hero-photo">
+                ADD YOUR HEADSHOT:
+                <img src="photos/headshot.jpg" alt="Quinn Boyle" class="hero-photo">
             -->
             <div class="hero-photo-placeholder">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -66,7 +69,14 @@
             </div>
         </div>
         </div><!-- /hero-grid -->
+
+        <!-- Scroll hint -->
+        <div class="hero-scroll-cue" aria-hidden="true">
+            <span>scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
     </section>
+    </div><!-- /hero-scroll-wrapper -->
 
     <!-- Work Section -->
     <section class="work-section" id="work">
@@ -232,6 +242,36 @@
         heroEls.forEach((el, i) => {
             setTimeout(() => el.classList.add('revealed'), 100 + i * 120);
         });
+
+        // ── Scroll-driven car animation ────────────────────────────
+        (function () {
+            const wrapper = document.getElementById('heroScrollWrapper');
+            const car     = document.getElementById('heroCar');
+            if (!wrapper || !car) return;
+
+            function onScroll() {
+                const wTop  = wrapper.offsetTop;
+                const wH    = wrapper.offsetHeight;
+                const vh    = window.innerHeight;
+                const scrollY = window.scrollY;
+
+                // Progress runs from 0 (car stationary) to 1 (car fully off-screen).
+                // The animation occupies the "extra" height of the wrapper beyond 100vh.
+                const animEnd = wTop + wH - vh;
+                const raw = (scrollY - wTop) / (animEnd - wTop);
+                const p   = Math.max(0, Math.min(1, raw));
+
+                // Cubic ease-in → starts almost still, then accelerates hard
+                const eased = p * p * p;
+
+                // Drive car off to the right (translateX) + very slight upward
+                car.style.transform =
+                    `translateX(${eased * 160}%) translateY(${-eased * 4}%)`;
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll(); // set initial position
+        })();
 
         // ── Film grain ─────────────────────────────────────────────
         (function () {

@@ -136,63 +136,103 @@ body {
     .nav-links a { font-size: 1.5rem; font-weight: 600; color: var(--text); }
 }
 
+/* ── Hero scroll wrapper — tall so the sticky hero "holds" ─────
+   Extra height = scroll distance for the car animation.            */
+.hero-scroll-wrapper {
+    position: relative;
+    height: 230vh;          /* 130vh of animation scroll space */
+}
+
 /* ── Hero ────────────────────────────────────────────────────── */
 .hero {
-    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 0 80px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
 }
 
-/* Car background image — drop a Porsche 911 PNG/JPG here:
-   <div class="hero-car-bg" style="background-image:url('photos/car.png')"></div> */
-.hero-car-bg {
+/* ── Porsche 911 — scroll-animated ────────────────────────────
+   translateX driven by JS; starts bottom-right, drives off right */
+.hero-car {
     position: absolute;
+    bottom: -4%;
     right: -2%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 58%;
-    height: 80%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center right;
-    opacity: 0.13;
-    filter: grayscale(100%) contrast(1.4) brightness(0.75);
+    width: 54%;
+    z-index: 1;
     pointer-events: none;
-    z-index: 0;
-    /* fade out toward the left so it blends with the text side */
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
-    mask-image: linear-gradient(to right, transparent 0%, black 35%);
+    will-change: transform;
+    /* fade leading edge so car blends into page */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%);
+    mask-image:         linear-gradient(to right, transparent 0%, black 14%);
 }
 
-/* Animated film-grain overlay */
+.hero-car-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* grainy vintage treatment */
+    filter: grayscale(20%) contrast(1.1) brightness(0.92) sepia(8%);
+}
+
+/* ── Film-grain overlay ────────────────────────────────────────
+   background-image injected by JS canvas (random noise texture) */
 .hero-grain {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 2;
+    z-index: 3;
     opacity: 0.07;
     background-size: 256px 256px;
-    /* background-image set by JS canvas below */
 }
 
+/* ── Scroll hint ───────────────────────────────────────────────*/
+.hero-scroll-cue {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+}
+.hero-scroll-cue span {
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--subtle);
+}
+.hero-scroll-line {
+    width: 1px;
+    height: 44px;
+    background: linear-gradient(to bottom, var(--subtle), transparent);
+    animation: scrollLinePulse 1.8s ease-in-out infinite;
+}
+@keyframes scrollLinePulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    50%       { opacity: 0.3; transform: scaleY(0.4); transform-origin: top; }
+}
+
+/* ── Hero content grid (left-aligned) ─────────────────────────*/
 .hero-grid {
-    max-width: 1200px;
-    margin: 0 auto;
     width: 100%;
-    padding: 0 72px;
+    max-width: 680px;          /* content lives in the left portion */
+    margin: 0;
+    padding: 0 0 0 80px;       /* flush left with comfortable indent */
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 96px;
+    grid-template-columns: 1fr auto;
+    gap: 52px;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
-.hero-left { max-width: 100%; }
+.hero-left { min-width: 0; }
 
 /* Big name */
 .hero-name {
@@ -258,21 +298,39 @@ body {
 .hero-photo-placeholder span { font-size: 0.875rem; font-weight: 500; }
 .hero-photo-placeholder small { font-size: 0.75rem; opacity: 0.6; font-family: monospace; }
 
-@media (max-width: 900px) {
-    .hero { padding: 100px 0 64px; }
+@media (max-width: 768px) {
+    /* On mobile the scroll wrapper just stacks normally */
+    .hero-scroll-wrapper { height: auto; }
+    .hero {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 80px;
+    }
     .hero-grid {
         grid-template-columns: 1fr;
+        max-width: none;
         padding: 0 24px;
-        gap: 36px;
+        gap: 32px;
     }
     .hero-right { order: -1; }
     .hero-photo,
     .hero-photo-placeholder {
-        width: 180px;
-        height: 216px;
-        border-radius: 90px;
+        width: 160px;
+        height: 192px;
+        border-radius: 80px;
     }
     .hero-name { font-size: clamp(3rem, 14vw, 5rem); }
+    /* Car sits smaller on mobile, no animation */
+    .hero-car {
+        width: 85%;
+        bottom: 0;
+        right: -10%;
+        opacity: 0.18;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+    .hero-scroll-cue { display: none; }
 }
 
 /* ── Buttons ─────────────────────────────────────────────────── */
