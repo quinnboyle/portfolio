@@ -1,0 +1,12 @@
+{
+  "name": "obviousport",
+  "version": "1.0.0",
+  "description": "Quinn Boyle UX Portfolio Website",
+  "scripts": {
+    "start": "npx live-server --port=8080 --open=/index.html",
+    "serve": "npx http-server -p 8080 -o"
+  },
+  "author": "Quinn Boyle",
+  "license": "MIT"
+}
+

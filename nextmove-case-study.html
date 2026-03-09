@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NextMove Case Study - Quinn Boyle UX Portfolio">
+    <title>NextMove Case Study - Quinn Boyle</title>
+    <link rel="stylesheet" href="styles-light.css">
+    <link rel="stylesheet" href="case-study-light.css">
+    <link rel="stylesheet" href="case-personas-overrides.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- { changed code } -->
+    <style>
+        /* Constrain the case hero image area and create a 3-column grid for small photos */
+        .case-hero .case-hero-image {
+            /* remove any forced height from existing CSS and let content size naturally */
+            height: auto !important;
+            display: block;
+            margin-top: var(--space-6);
+        }
+        .case-hero-image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            max-width: 100%;
+            align-items: start;
+        }
+        .case-hero-image-grid figure {
+            margin: 0;
+        }
+        .case-hero-image-grid img {
+            width: 100%;
+            height: 160px; /* smaller uniform height */
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+        @media (max-width: 800px) {
+            .case-hero-image-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-hero-image-grid img {
+                height: 220px; /* slightly taller on narrow screens for legibility */
+            }
+        }
+        .case-hero-logo {
+            margin: var(--space-4) 0 var(--space-4);
+        }
+        .case-hero-logo img {
+            height: 56px;
+            width: auto;
+            display: block;
+        }
+            .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 920px;
+            margin: var(--space-6) auto 0;
+        }
+        .screen-card {
+            padding: var(--space-4);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            background: var(--bg-secondary);
+        }
+        .screen-card h4 {
+            margin: 0 0 var(--space-3) 0;
+            font-size: 1.1rem;
+        }
+        .screen-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 1024px) {
+            .screens-grid {
+                grid-template-columns: repeat(2, minmax(240px, 1fr));
+            }
+        }
+        @media (max-width: 640px) {
+            .screens-grid {
+                grid-template-columns: 1fr;
+                max-width: 560px;
+            }
+        }
+    </style>
+    <!-- { changed code } -->
+</head>
+<body class="case-study-page">
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo" style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html#projects" class="nav-link">Work</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Hero -->
+    <section class="case-hero">
+        <div class="container container-lg">
+            <div class="case-hero-content">
+                <h1 class="case-title">NextMove</h1>
+
+                <div class="case-tags">
+                    <span class="project-tag">User Research</span>
+                    <span class="project-tag">UI/UX Design</span>
+                    <span class="project-tag">Prototyping</span>
+                </div>
+                <p class="case-summary">
+                    A student-focused web platform that consolidates post-graduation planning into a single, cohesive experience helping college students navigate job searches, internships, graduate school exploration, and application tracking with clarity and confidence.
+
+                </p>
+                <div class="case-meta-grid">
+                    <div class="case-meta-item">
+                        <span class="case-meta-label">Role</span>
+                        <span class="case-meta-value">UX Designer, Researcher</span>
+                    </div>
+                    <div class="case-meta-item">
+                        <span class="case-meta-label">Timeline</span>
+                        <span class="case-meta-value">12 weeks </span>
+                    </div>
+                    <div class="case-meta-item">
+                        <span class="case-meta-label">Team</span>
+                        <span class="case-meta-value">Academic capstone project</span>
+                    </div>
+                    <div class="case-meta-item">
+                        <span class="case-meta-label">Tools</span>
+                        <span class="case-meta-value">Figma, Miro, RPA</span>
+                    </div>
+                </div>
+            </div>
+                         <!-- { changed code } -->
+                <div class="case-hero-image-grid">
+                    <figure>
+                        <img src="photos/nextmove_home.png" alt="NextMove — Home view">
+                    </figure>
+                    <figure>
+                        <img src="photos/nextmove_jobSeek.png" alt="NextMove — Job discovery view">
+                    </figure>
+                    <figure>
+                        <img src="photos/nextmove_jobTrack.png" alt="NextMove — Application tracker view">
+                    </figure>
+                </div>
+        </div>
+    </section>
+    <script>
+      // Ensure we target the right Personas section even if HTML lacks an explicit id/class,
+      // and add divider lines between sections (including one above "Define").
+      document.addEventListener('DOMContentLoaded', function () {
+        // Find a heading that contains "Persona" and get its section wrapper
+        const heading = Array.from(document.querySelectorAll('h2, h3'))
+          .find(h => /persona/i.test(h.textContent || ''));
+        if (heading) {
+          const section = heading.closest('section') || heading.parentElement;
+          if (section) {
+            // Tag the section so existing CSS overrides apply and ensure it's visible
+            section.id = 'personas';
+            section.classList.add('personas');
+            section.setAttribute('data-section', 'personas');
+            section.style.display = '';
+            section.style.visibility = '';
+
+            // Strip white "card" container styling inside the personas section
+            section.querySelectorAll('[class*="card"], [class*="panel"], [class*="box"], [class*="content-card"], [class*="wrapper"], [class*="container"]').forEach(el => {
+              el.style.background = 'transparent';
+              el.style.border = '0';
+              el.style.boxShadow = 'none';
+            });
+
+            // Remove only photos/avatars (keep figures/captions/wrappers)
+            section.querySelectorAll('img, .persona-photo, .avatar').forEach(node => node.remove());
+
+            // If any photo-only wrappers are now empty, remove them
+            section.querySelectorAll('[class*="photo"], [class*="avatar"]').forEach(el => {
+              if (!el.querySelector('*')) el.remove();
+            });
+
+            // Collapse multi-column grids to a single column for text-first readability
+            section.querySelectorAll('[style*="grid-template-columns"], .grid, .persona, .persona-card, [class*="persona-item"]').forEach(el => {
+              const cs = getComputedStyle(el);
+              if (cs.display.includes('grid')) {
+                el.style.gridTemplateColumns = '1fr';
+                el.style.gap = '20px';
+              }
+            });
+
+            // Add gentle separators between persona items for scannability
+            const items = section.querySelectorAll('.persona, .persona-card, [class*="persona-item"]');
+            items.forEach((item, idx) => {
+              if (idx > 0 && !item.style.borderTop) {
+                item.style.borderTop = '1px solid var(--border-subtle)';
+                item.style.paddingTop = '20px';
+              }
+            });
+
+            // If an item has 2+ top-level lists, group the first two into a details grid
+            items.forEach(item => {
+              const directULs = Array.from(item.querySelectorAll(':scope > ul'));
+              if (directULs.length >= 2) {
+                const wrap = document.createElement('div');
+                wrap.className = 'persona-details';
+                wrap.appendChild(directULs[0]);
+                wrap.appendChild(directULs[1]);
+                item.appendChild(wrap);
+              }
+            });
+          }
+        }
+
+        // Insert divider lines before each major section heading (H2), including above "Define"
+        const h2s = Array.from(document.querySelectorAll('h2'));
+        h2s.forEach((h, idx) => {
+          if (idx === 0) return; // skip the very first H2 on the page
+          const prev = h.previousElementSibling;
+          if (!prev || !prev.classList || !prev.classList.contains('case-divider')) {
+            const divider = document.createElement('div');
+            divider.className = 'case-divider';
+            h.parentNode.insertBefore(divider, h);
+          }
+        });
+      });
+    </script>
+
+    <!-- Section Jump Navigation -->
+    <section class="section-nav">
+        <div class="container">
+            <nav class="process-nav">
+                <a href="#empathize" class="process-bubble">
+                    <span class="bubble-number">01</span>
+                    <span class="bubble-label">Empathize</span>
+                </a>
+                <a href="#define" class="process-bubble">
+                    <span class="bubble-number">02</span>
+                    <span class="bubble-label">Define</span>
+                </a>
+                <a href="#ideate" class="process-bubble">
+                    <span class="bubble-number">03</span>
+                    <span class="bubble-label">Ideate</span>
+                </a>
+                <a href="#prototype" class="process-bubble">
+                    <span class="bubble-number">04</span>
+                    <span class="bubble-label">Prototype</span>
+                </a>
+                <a href="#test" class="process-bubble">
+                    <span class="bubble-number">05</span>
+                    <span class="bubble-label">Test</span>
+                </a>
+                <a href="#reflection" class="process-bubble">
+                    <span class="bubble-number">06</span>
+                    <span class="bubble-label">Prototype</span>
+                </a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Design Thinking Process -->
+    <div class="case-content">
+        
+        <!-- 1. Empathize -->
+        <section class="case-section" id="empathize">
+            <div class="container">
+                <div class="section-label">01 — Empathize</div>
+                <h2 class="section-title">Understanding the Students</h2>
+                
+                <div class="content-block">
+                    <h3>The Challenge</h3>
+                    <p>
+                        Graduating college students face overwhelming confusion when planning their post-graduation paths.
+                        They juggle multiple tools such as LinkedIn, Handshake, spreadsheets for tracking,
+                        university portals. All of these together are leading to fragmented experiences, missed opportunities,
+                        and decision paralysis at a critical life transition.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h3>User Research</h3>
+                    <p>
+                        I conducted comprehensive research to understand the graduating student experience, using surveys, 
+                        interviews, and journey mapping to uncover pain points and opportunities.
+                    </p>
+                    
+                    <div class="research-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">47</span>
+                            <span class="stat-label">Survey Responses</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">User Interviews</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">User Personas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Key Pain Points</h3>
+                    <div class="pain-points-grid">
+                        <div class="pain-point-card">
+                            <div class="pain-point-icon"></div>
+                            <h4>Tool Fragmentation</h4>
+                            <p>Students use 5-7 different platforms to manage their post-grad planning, leading to lost information and duplicated effort.</p>
+                            <blockquote>"I have tabs open in three different browsers just to keep track of my applications. It's chaos."</blockquote>
+                        </div>
+                        <div class="pain-point-card">
+                            <div class="pain-point-icon"></div>
+                            <h4>Decision Fatigue</h4>
+                            <p>Without clear structure or guidance, students feel paralyzed by the sheer number of options and pathways available.</p>
+                            <blockquote>"I don't even know where to start. Should I apply to jobs? Grad school? Both? I'm just overwhelmed."</blockquote>
+                        </div>
+                        <div class="pain-point-card">
+                            <div class="pain-point-icon"></div>
+                            <h4>Lack of Visibility</h4>
+                            <p>Students struggle to see their progress, track deadlines, and understand what steps to take next in their planning journey.</p>
+                            <blockquote>"I wish I could just see everything in one place. what I've applied to, what's due, what I should focus on next."</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- 2. Define -->
+        <section class="case-section" id="define">
+            <div class="container">
+                <div class="section-label">02 — Define</div>
+                <h2 class="section-title">Defining the Problem</h2>
+                
+                <div class="content-block">
+                    <h3>Problem Statement</h3>
+                    <div class="problem-statement">
+                        <p>
+                            <strong>How might we</strong> help graduating college students navigate post-graduation planning 
+                            in a way that reduces confusion, consolidates fragmented workflows, and provides clear guidance 
+                            for their next steps?
+                        </p>
+                    </div>
+                    <p>
+                        This problem is critical because students make life-changing decisions during this transition period, 
+                        yet they lack structured support. The fragmentation across tools creates cognitive overload and leads 
+                        to missed deadlines, incomplete applications, and decision paralysis. A unified platform could transform 
+                        this chaotic experience into an organized, confidence-building journey.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Key Insights</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <div class="insight-number">01</div>
+                            <h4>Fragmentation Creates Friction</h4>
+                            <p>Students reported using an average of 6.3 different tools to manage their post-grad planning, with 78% saying they've lost track of applications or deadlines because of this fragmentation.</p>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-number">02</div>
+                            <h4>Guidance Over Choice</h4>
+                            <p>When presented with unlimited options, 82% of students preferred a guided experience that helps them reflect on goals and narrows down relevant opportunities rather than browsing everything.</p>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-number">03</div>
+                            <h4>Progress Visibility Matters</h4>
+                            <p>Students expressed high anxiety about not knowing if they're "on track." They wanted visual indicators of progress, upcoming deadlines, and recommended next steps to reduce uncertainty.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-block">
+                    <div style="display: flex; justify-content: center;">
+                        <img src="photos/nextmove_journey_map.png" alt="User journey map showing student experience across current fragmented tools" style="max-width: 100%; height: auto; width: auto;">
+                    </div>
+                    <p class="image-caption">User journey map highlighting friction points in current post-graduation planning process</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Ideate -->
+        <section class="case-section" id="ideate">
+            <div class="container">
+                <div class="section-label">03 — Ideate</div>
+                <h2 class="section-title">Exploring Solutions</h2>
+                
+                <div class="content-block">
+                    <h3>Ideation Process</h3>
+                    <p>
+                        I ran a series of ideation sessions using Miro to explore different approaches to solving the 
+                        fragmentation problem. Key questions included: Should we focus on aggregation (pulling data from 
+                        existing tools) or creation (building new workflows)? How do we balance structure with flexibility? 
+                        What features are must-haves vs. nice-to-haves for an MVP?
+                    </p>
+                </div>
+
+                <div class="image-block">
+                    <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVLjM11Lw=/?embedMode=view_only_without_ui&moveToViewport=-1354,-364,3101,1526&embedId=180168535896" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen style="border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); width: 100%; max-width: 100%;"></iframe>
+                    <p class="image-caption">Ideation session exploring different feature sets and user flows</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Core Features Defined</h3>
+
+                    <div class="decisions-grid">
+                        <div class="decision-card">
+                            <h4>1. Guided Path Quiz</h4>
+                            <p><strong>Why:</strong> Students needed help narrowing down options before exploring specific opportunities. A reflective quiz helps them identify goals and interests, reducing decision fatigue.</p>
+                            <p><strong>Trade-off:</strong> Considered AI-powered recommendations but chose a simpler rule-based approach for MVP to ensure accuracy and control.</p>
+                        </div>
+                        <div class="decision-card">
+                            <h4>2. Unified Application Tracker</h4>
+                            <p><strong>Why:</strong> The #1 pain point was tracking applications across multiple platforms. A centralized tracker with status updates and deadline reminders addresses this directly.</p>
+                            <p><strong>Trade-off:</strong> Initially planned automatic data import from LinkedIn/Handshake but scoped down to manual entry for MVP due to API complexity.</p>
+                        </div>
+                        <div class="decision-card">
+                            <h4>3. Opportunity Discovery</h4>
+                            <p><strong>Why:</strong> Students wanted to explore jobs, internships, and grad schools in one place rather than switching between platforms.</p>
+                            <p><strong>Trade-off:</strong> Built custom search and filtering instead of integrating third-party job boards to maintain consistent UX.</p>
+                        </div>
+                        <div class="decision-card">
+                            <h4>4. Personalized Dashboard</h4>
+                            <p><strong>Why:</strong> Progress visibility was critical for reducing anxiety. A dashboard showing upcoming deadlines, application status, and recommended actions provides clarity.</p>
+                            <p><strong>Trade-off:</strong> Simplified the dashboard metrics for MVP—focused on actionable insights over comprehensive analytics.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Prototype -->
+        <section class="case-section" id="prototype">
+            <div class="container">
+                <div class="section-label">04 — Prototype</div>
+                <h2 class="section-title">Bringing NextMove to Life</h2>
+                
+                <h3>From Wireframes to High-Fidelity</h3>
+                 <p>
+                 I started with low-fidelity wireframes to test core flows and navigation patterns, then iterated based on feedback before moving to high-fidelity designs. The focus was on creating a clean, scannable interface that doesn't add to students' cognitive load.
+                 </p>
+                </div>
+
+                <div class="image-block">
+                 <div style="display: flex; justify-content: center;">
+                 <img src="photos/nextmove_lofi2.jpg" alt="NextMove low-fidelity wireframes" style="width: min(100%, 560px); height: auto;">
+                 </div>
+                </div>
+
+
+
+
+                <div class="content-block">
+                    <h3 style="text-align: center;">Key Screens</h3>
+                    <div class="screens-grid">
+                        <div class="screen-card">
+                            <h4>Dashboard</h4>
+                            <p>Personalized home showing upcoming deadlines, application status overview, and recommended next actions based on user goals.</p>
+                        </div>
+                        <div class="screen-card">
+                            <h4>Discover</h4>
+                            <p>Unified search and filtering for jobs, internships, and graduate programs with saved searches and recommendations.</p>
+                        </div>
+                        <div class="screen-card">
+                            <h4>Track</h4>
+                            <p>Application tracker with Kanban-style status columns (Saved, Applied, Interviewing, Offer, Rejected) and deadline management.</p>
+                        </div>
+                        <div class="screen-card">
+                            <h4>Quiz</h4>
+                            <p>Guided questionnaire helping students reflect on interests, skills, and goals to surface relevant pathways.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-block">
+                    <div style="display: flex; justify-content: center;">
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); max-width: 100%;"
+                                width="800"
+                                height="450"
+                                src="https://embed.figma.com/design/1FZE7TYMjKJXYBzopij9hX/NEXTMOVE?node-id=0-1&embed-host=share"
+                                allowfullscreen></iframe>
+                    </div>
+                    <p class="image-caption">Interactive Figma prototype of NextMove</p>
+                </div>
+        </section>
+
+        <!-- 5. Test -->
+        <section class="case-section" id="test">
+            <div class="container">
+                <div class="section-label">05 — Test</div>
+                <h2 class="section-title">Validating the Solution</h2>
+                
+                <div class="content-block">
+                    <h3>Usability Testing</h3>
+                    <p>
+                        I conducted moderated usability testing with 8 graduating students (mix of juniors and seniors) 
+                        to validate core flows and identify friction points. Participants completed key tasks: taking the 
+                        guided quiz, searching for opportunities, adding an application to the tracker, and checking their dashboard.
+                    </p>
+                    
+                    <div class="testing-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Test Participants</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Task Success Rate</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.6/5</span>
+                            <span class="stat-label">Ease of Use Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Key Findings & Iterations</h3>
+                    <div class="findings-grid">
+                        <div class="finding-card">
+                            <div class="finding-status success">✓ What Worked</div>
+                            <p><strong>Unified experience:</strong> 100% of participants loved having everything in one place. "This is exactly what I needed" was the most common feedback.</p>
+                            <p><strong>Guided quiz:</strong> The quiz helped users who felt overwhelmed. 7/8 participants said it gave them clarity on where to focus.</p>
+                            <p><strong>Visual progress:</strong> The dashboard's deadline view and application status gave students confidence they weren't missing anything.</p>
+                        </div>
+                        <div class="finding-card">
+                            <div class="finding-status warning">⚡ What Needed Work</div>
+                            <p><strong>Quiz length:</strong> Initial version had 15 questions—users found it too long. Reduced to 8 focused questions in iteration.</p>
+                            <p><strong>Filter complexity:</strong> Discovery page had too many filter options. Simplified to 3 key filters (type, location, deadline) with advanced options hidden.</p>
+                            <p><strong>Mobile nav:</strong> Bottom navigation was hard to reach on larger phones. Moved to top navigation with hamburger menu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Reflection -->
+        <section class="case-section" id="reflection">
+            <div class="container container-sm">
+
+
+                <div class="content-block">
+                    <p style="text-align: center; margin-top: var(--space-8);">
+                        <a href="https://www.figma.com/proto/1FZE7TYMjKJXYBzopij9hX/NEXTMOVE?node-id=0-1&t=dMLjiPEzj8Anu43A-1" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn btn-primary btn-lg"
+                           style="display: inline-flex; align-items: center; gap: var(--space-2);">
+                            View Interactive Figma Prototype
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Next Project -->
+        <section class="case-navigation">
+            <div class="container">
+                <div class="case-nav-content">
+                    <a href="index.html#projects" class="case-nav-link">
+                        <span class="case-nav-label">Back to</span>
+                        <span class="case-nav-title">All Projects</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Quinn Boyle. Designed and built with care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolio-v2.js"></script>
+</body>
+</html>
