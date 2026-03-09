@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quinn Boyle — UX Designer who codes. Portfolio showcasing user-centered design and technical implementation.">
+    <meta name="description" content="Quinn Boyle — UX & Product Designer based in Philadelphia. Recent graduate seeking entry-level design and product development roles.">
     <title>Quinn Boyle — UX Designer</title>
     <link rel="stylesheet" href="styles-light.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -29,82 +29,88 @@
 
     <!-- Hero -->
     <section class="hero" id="home">
-        <div class="hero-inner">
-            <p class="hero-eyebrow reveal-up">UX Designer &amp; Developer — Dublin, Ireland</p>
-            <h1 class="hero-title">
-                <span class="line-wrap"><span class="line-inner">Designing with</span></span>
-                <span class="line-wrap"><em class="line-inner">people</em><span class="line-inner">&nbsp;in mind.</span></span>
+        <div class="hero-left">
+            <div class="hero-badges reveal-up">
+                <span class="badge badge--location">📍 Philadelphia, PA</span>
+                <span class="badge badge--status">Open to work</span>
+            </div>
+            <h1 class="hero-name reveal-up">
+                Quinn<br>Boyle
             </h1>
-            <p class="hero-desc reveal-up">I'm Quinn — a UX designer who bridges research, design, and code to build experiences that actually work for the people using them.</p>
+            <p class="hero-role reveal-up">UX &amp; Product Designer</p>
+            <p class="hero-bio reveal-up">
+                Recent graduate looking for entry-level roles in product design and development.
+                I care about building things that are simple, useful, and actually make sense to the people using them.
+            </p>
+            <div class="hero-actions reveal-up">
+                <a href="#work" class="btn-primary">See my work →</a>
+                <a href="mailto:quinnboyle237@gmail.com" class="btn-ghost">Get in touch</a>
+            </div>
         </div>
-        <div class="hero-bottom reveal-up">
-            <a href="#work" class="hero-link">See my work ↓</a>
-            <span class="hero-available">● Available for work</span>
+        <div class="hero-right reveal-up">
+            <!--
+                ADD YOUR PHOTO:
+                Replace the div below with:
+                <img src="photos/your-photo.jpg" alt="Quinn Boyle" class="hero-photo">
+            -->
+            <div class="hero-photo-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>Add your photo here</span>
+                <small>photos/headshot.jpg</small>
+            </div>
         </div>
     </section>
 
     <!-- Work Section -->
     <section class="work-section" id="work">
-        <p class="section-eyebrow reveal-up">Selected Work</p>
+        <p class="section-label reveal-up">Selected Work</p>
 
         <!-- Project 1 -->
         <article class="project-row reveal-up">
-            <a href="nextmove-case-study.html" class="project-image-wrap">
-                <div class="project-image-inner">
-                    <img src="photos/nextmove_logo.png" alt="NextMove project">
-                    <div class="project-image-overlay">
-                        <span>View Case Study →</span>
-                    </div>
+            <a href="nextmove-case-study.html" class="project-img-wrap">
+                <div class="project-img-inner">
+                    <img src="photos/nextmove_logo.png" alt="NextMove">
+                    <div class="project-img-overlay"><span>View Case Study →</span></div>
                 </div>
             </a>
             <div class="project-info">
-                <span class="project-num">01</span>
-                <div class="project-tags">
-                    <span>User Research</span>
-                    <span>UI/UX Design</span>
-                    <span>Development</span>
-                </div>
+                <div class="project-pill">USER RESEARCH &amp; UI DESIGN</div>
                 <h2 class="project-title">NextMove</h2>
-                <p class="project-desc">A property-finding platform redesigned around how people actually search for homes — reducing cognitive load and improving decision confidence through research-led UX.</p>
-                <a href="nextmove-case-study.html" class="project-cta">Read Case Study →</a>
+                <p class="project-desc">A property-finding platform redesigned to reduce the overwhelm of home searching — making it easier for first-time buyers to find and compare homes with confidence.</p>
+                <a href="nextmove-case-study.html" class="project-link">View Case Study →</a>
             </div>
         </article>
 
         <!-- Project 2 -->
         <article class="project-row project-row--flip reveal-up">
-            <a href="case-study.html?project=2" class="project-image-wrap">
-                <div class="project-image-inner project-image-inner--empty">
+            <a href="case-study.html?project=2" class="project-img-wrap">
+                <div class="project-img-inner project-img-inner--empty">
                     <span>Coming Soon</span>
                 </div>
             </a>
             <div class="project-info">
-                <span class="project-num">02</span>
-                <div class="project-tags">
-                    <span>UX Research</span>
-                    <span>Interaction Design</span>
-                </div>
+                <div class="project-pill">UX RESEARCH &amp; INTERACTION DESIGN</div>
                 <h2 class="project-title">Project Two</h2>
-                <p class="project-desc">Details coming soon. This project explores accessible interaction patterns and inclusive design systems for enterprise software.</p>
-                <a href="case-study.html?project=2" class="project-cta">Coming Soon →</a>
+                <p class="project-desc">Details coming soon. This project focuses on improving how people navigate complex information — making a difficult task feel straightforward and approachable.</p>
+                <a href="case-study.html?project=2" class="project-link">Coming Soon →</a>
             </div>
         </article>
 
         <!-- Project 3 -->
         <article class="project-row reveal-up">
-            <a href="case-study.html?project=3" class="project-image-wrap">
-                <div class="project-image-inner project-image-inner--empty">
+            <a href="case-study.html?project=3" class="project-img-wrap">
+                <div class="project-img-inner project-img-inner--empty">
                     <span>Coming Soon</span>
                 </div>
             </a>
             <div class="project-info">
-                <span class="project-num">03</span>
-                <div class="project-tags">
-                    <span>Development</span>
-                    <span>Accessibility</span>
-                </div>
+                <div class="project-pill">DEVELOPMENT &amp; ACCESSIBILITY</div>
                 <h2 class="project-title">Project Three</h2>
-                <p class="project-desc">A deep-dive into accessibility-first design, building components that meet WCAG 2.1 AA while remaining visually engaging and easy to use.</p>
-                <a href="case-study.html?project=3" class="project-cta">Coming Soon →</a>
+                <p class="project-desc">Details coming soon. A project built around accessibility-first thinking — designing and coding components that work for everyone, regardless of ability or device.</p>
+                <a href="case-study.html?project=3" class="project-link">Coming Soon →</a>
             </div>
         </article>
     </section>
@@ -113,18 +119,14 @@
     <section class="about-section" id="about">
         <div class="about-inner">
             <div class="about-left reveal-up">
-                <p class="section-eyebrow">About</p>
-                <h2 class="about-title">
-                    A designer who<br>
-                    thinks in <em>systems</em><br>
-                    and speaks code.
-                </h2>
+                <p class="section-label">About</p>
+                <h2 class="about-title">A bit<br>about me.</h2>
             </div>
             <div class="about-right">
                 <div class="about-text reveal-up">
-                    <p>I'm a UX designer with a background in IT support at ICON PLC, where I saw firsthand how good (and bad) software design impacts people's daily work. That experience sparked my transition into UX—I wanted to be on the front lines of creating better experiences, not just fixing broken ones.</p>
-                    <p>I approach design through a research-first lens, combining user insights with technical feasibility. My IT background means I understand both what users need and what's actually buildable—which helps me design solutions that ship.</p>
-                    <p>Currently seeking entry-level UX roles in healthcare, education, or sustainability — domains where thoughtful design makes a real difference.</p>
+                    <p>I'm a recent graduate based in Philadelphia with a background in IT support — which is actually where I got hooked on UX. Watching people struggle with software that should've been easier to use made me want to fix things from the start, not after the fact.</p>
+                    <p>I approach problems by talking to people first. I like understanding the "why" before jumping to solutions — and I can code, which means I think about what's actually buildable while I design.</p>
+                    <p>I'm looking for entry-level roles in product design or product development where I can learn fast, contribute early, and help build things people genuinely enjoy using.</p>
                 </div>
                 <div class="skills-grid reveal-up">
                     <div class="skill-col">
@@ -159,15 +161,14 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section class="contact-section" id="contact">
         <div class="contact-inner">
-            <p class="section-eyebrow reveal-up">Get In Touch</p>
-            <h2 class="contact-title reveal-up">
-                Let's build<br><em>something great</em><br>together.
-            </h2>
-            <div class="contact-body reveal-up">
-                <a href="mailto:quinnboyle237@gmail.com" class="contact-email">quinnboyle237@gmail.com</a>
+            <p class="section-label reveal-up">Get In Touch</p>
+            <h2 class="contact-title reveal-up">Let's talk.</h2>
+            <p class="contact-desc reveal-up">I'm actively looking for entry-level opportunities in product design and development. If you think I could be a fit — or just want to chat — I'd love to hear from you.</p>
+            <div class="contact-links reveal-up">
+                <a href="mailto:quinnboyle237@gmail.com" class="btn-primary">quinnboyle237@gmail.com →</a>
                 <div class="contact-socials">
                     <a href="https://linkedin.com/in/quinn-boyle" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                     <a href="https://github.com/quinnboyle" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -180,7 +181,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <span>© 2026 Quinn Boyle</span>
-            <span>Designed &amp; coded by Quinn</span>
+            <span>Philadelphia, PA</span>
         </div>
     </footer>
 
@@ -188,63 +189,45 @@
     (function () {
         'use strict';
 
-        // ── Nav scroll state ───────────────────────────────────────
+        // Nav scroll
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 40);
         }, { passive: true });
 
-        // ── Mobile nav toggle ──────────────────────────────────────
+        // Mobile nav
         const toggle = document.getElementById('navToggle');
         const links  = document.getElementById('navLinks');
         toggle.addEventListener('click', () => {
             toggle.classList.toggle('open');
             links.classList.toggle('open');
         });
-        links.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                toggle.classList.remove('open');
-                links.classList.remove('open');
-            });
-        });
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            toggle.classList.remove('open');
+            links.classList.remove('open');
+        }));
 
-        // ── Smooth scroll ──────────────────────────────────────────
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', (e) => {
-                const target = document.querySelector(a.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+            a.addEventListener('click', e => {
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
             });
         });
 
-        // ── Scroll reveal ──────────────────────────────────────────
-        const obs = new IntersectionObserver((entries) => {
+        // Scroll reveal
+        const obs = new IntersectionObserver(entries => {
             entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('revealed');
-                    obs.unobserve(e.target);
-                }
+                if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal-up').forEach(el => obs.observe(el));
 
-        // Hero title lines reveal on load
-        document.querySelectorAll('.line-inner').forEach((el, i) => {
-            setTimeout(() => el.classList.add('revealed'), 80 + i * 140);
+        // Stagger hero on load
+        const heroEls = document.querySelectorAll('.hero .reveal-up');
+        heroEls.forEach((el, i) => {
+            setTimeout(() => el.classList.add('revealed'), 100 + i * 120);
         });
-        document.querySelectorAll('.hero-eyebrow, .hero-desc').forEach((el, i) => {
-            setTimeout(() => el.classList.add('revealed'), 200 + i * 150);
-        });
-        setTimeout(() => {
-            document.querySelector('.hero-bottom')?.classList.add('revealed');
-        }, 600);
-
-        // ── Console easter egg ─────────────────────────────────────
-        console.log('%cHey there! 👋', 'font-size:16px;font-weight:bold;');
-        console.log('%cPortfolio by Quinn Boyle.', 'font-size:13px;color:#888;');
     })();
     </script>
 
